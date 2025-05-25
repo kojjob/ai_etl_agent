@@ -9,6 +9,9 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+/* Import authentication styles */
+@import "authentication.css";
+
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;

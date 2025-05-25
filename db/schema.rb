@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_25_180843) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_25_200200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -352,8 +352,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_25_180843) do
     t.string "full_name"
     t.boolean "is_active"
     t.boolean "is_admin"
-    t.string "role_type", null: false
-    t.bigint "role_id", null: false
+    t.string "role_type"
+    t.bigint "role_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "role", default: 1, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["full_name"], name: "index_users_on_full_name"
     t.index ["is_active"], name: "index_users_on_is_active"
