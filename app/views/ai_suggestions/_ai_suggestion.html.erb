@@ -1,0 +1,42 @@
+<div id="<%= dom_id ai_suggestion %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= ai_suggestion.user_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Session:</strong>
+    <%= ai_suggestion.session_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Context entity:</strong>
+    <%= ai_suggestion.context_entity_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Suggestion prompt:</strong>
+    <%= ai_suggestion.suggestion_prompt %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Suggestion content:</strong>
+    <%= ai_suggestion.suggestion_content %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Suggestion type:</strong>
+    <%= ai_suggestion.suggestion_type %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Confidence score:</strong>
+    <%= ai_suggestion.confidence_score %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= ai_suggestion.status %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Feedback rating:</strong>
+    <%= ai_suggestion.feedback_rating %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Feedback text:</strong>
+    <%= ai_suggestion.feedback_text %>
+  </div>
+</div>
