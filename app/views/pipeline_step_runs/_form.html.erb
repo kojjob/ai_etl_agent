@@ -1,0 +1,67 @@
+<%= form_with(model: pipeline_step_run, class: "contents") do |form| %>
+  <% if pipeline_step_run.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(pipeline_step_run.errors.count, "error") %> prohibited this pipeline_step_run from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% pipeline_step_run.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :pipeline_run_id %>
+    <%= form.text_field :pipeline_run_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:pipeline_run_id].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:pipeline_run_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :pipeline_step_id %>
+    <%= form.text_field :pipeline_step_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:pipeline_step_id].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:pipeline_step_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :status %>
+    <%= form.text_field :status, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:status].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:status].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :start_time %>
+    <%= form.datetime_field :start_time, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:start_time].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:start_time].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :end_time %>
+    <%= form.datetime_field :end_time, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:end_time].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:end_time].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :duration_ms %>
+    <%= form.text_field :duration_ms, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:duration_ms].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:duration_ms].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :metrics %>
+    <%= form.text_field :metrics, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:metrics].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:metrics].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :logs_summary %>
+    <%= form.textarea :logs_summary, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:logs_summary].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:logs_summary].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :input_data_preview %>
+    <%= form.text_field :input_data_preview, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:input_data_preview].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:input_data_preview].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :output_data_preview %>
+    <%= form.text_field :output_data_preview, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step_run.errors[:output_data_preview].none?, "border-red-400 focus:outline-red-600": pipeline_step_run.errors[:output_data_preview].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

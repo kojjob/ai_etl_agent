@@ -1,0 +1,30 @@
+<div id="<%= dom_id dashboard %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= dashboard.user_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= dashboard.name %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= dashboard.description %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Layout config:</strong>
+    <%= dashboard.layout_config %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Is default:</strong>
+    <%= dashboard.is_default? ? "Yes" : "No" %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Is shared:</strong>
+    <%= dashboard.is_shared? ? "Yes" : "No" %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Shared with roles:</strong>
+    <%= dashboard.shared_with_roles %>
+  </div>
+</div>

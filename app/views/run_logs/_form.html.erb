@@ -1,0 +1,47 @@
+<%= form_with(model: run_log, class: "contents") do |form| %>
+  <% if run_log.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(run_log.errors.count, "error") %> prohibited this run_log from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% run_log.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :pipeline_run_id %>
+    <%= form.text_field :pipeline_run_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": run_log.errors[:pipeline_run_id].none?, "border-red-400 focus:outline-red-600": run_log.errors[:pipeline_run_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :pipeline_step_run_id %>
+    <%= form.text_field :pipeline_step_run_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": run_log.errors[:pipeline_step_run_id].none?, "border-red-400 focus:outline-red-600": run_log.errors[:pipeline_step_run_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :timestamp %>
+    <%= form.datetime_field :timestamp, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": run_log.errors[:timestamp].none?, "border-red-400 focus:outline-red-600": run_log.errors[:timestamp].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :level %>
+    <%= form.text_field :level, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": run_log.errors[:level].none?, "border-red-400 focus:outline-red-600": run_log.errors[:level].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :message %>
+    <%= form.textarea :message, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": run_log.errors[:message].none?, "border-red-400 focus:outline-red-600": run_log.errors[:message].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :source %>
+    <%= form.text_field :source, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": run_log.errors[:source].none?, "border-red-400 focus:outline-red-600": run_log.errors[:source].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

@@ -1,0 +1,72 @@
+<%= form_with(model: pipeline_step, class: "contents") do |form| %>
+  <% if pipeline_step.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(pipeline_step.errors.count, "error") %> prohibited this pipeline_step from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% pipeline_step.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :pipeline_id %>
+    <%= form.text_field :pipeline_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:pipeline_id].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:pipeline_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:name].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :description %>
+    <%= form.textarea :description, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:description].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:description].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :step_type %>
+    <%= form.text_field :step_type, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:step_type].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:step_type].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :sequence_order %>
+    <%= form.number_field :sequence_order, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:sequence_order].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:sequence_order].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :configuration %>
+    <%= form.text_field :configuration, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:configuration].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:configuration].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :source_connection_id %>
+    <%= form.text_field :source_connection_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:source_connection_id].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:source_connection_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :target_connection_id %>
+    <%= form.text_field :target_connection_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:target_connection_id].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:target_connection_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :expected_input_schema %>
+    <%= form.text_field :expected_input_schema, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:expected_input_schema].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:expected_input_schema].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :expected_output_schema %>
+    <%= form.text_field :expected_output_schema, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:expected_output_schema].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:expected_output_schema].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :ui_position %>
+    <%= form.text_field :ui_position, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": pipeline_step.errors[:ui_position].none?, "border-red-400 focus:outline-red-600": pipeline_step.errors[:ui_position].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

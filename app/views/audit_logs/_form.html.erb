@@ -1,0 +1,47 @@
+<%= form_with(model: audit_log, class: "contents") do |form| %>
+  <% if audit_log.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(audit_log.errors.count, "error") %> prohibited this audit_log from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% audit_log.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": audit_log.errors[:user_id].none?, "border-red-400 focus:outline-red-600": audit_log.errors[:user_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :action %>
+    <%= form.text_field :action, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": audit_log.errors[:action].none?, "border-red-400 focus:outline-red-600": audit_log.errors[:action].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :entity_id %>
+    <%= form.text_field :entity_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": audit_log.errors[:entity_id].none?, "border-red-400 focus:outline-red-600": audit_log.errors[:entity_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :old_value %>
+    <%= form.text_field :old_value, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": audit_log.errors[:old_value].none?, "border-red-400 focus:outline-red-600": audit_log.errors[:old_value].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :new_value %>
+    <%= form.text_field :new_value, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": audit_log.errors[:new_value].none?, "border-red-400 focus:outline-red-600": audit_log.errors[:new_value].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :ip_address %>
+    <%= form.text_field :ip_address, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": audit_log.errors[:ip_address].none?, "border-red-400 focus:outline-red-600": audit_log.errors[:ip_address].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

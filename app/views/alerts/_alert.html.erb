@@ -1,0 +1,42 @@
+<div id="<%= dom_id alert %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Pipeline:</strong>
+    <%= alert.pipeline_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Pipeline run:</strong>
+    <%= alert.pipeline_run_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Pipeline step run:</strong>
+    <%= alert.pipeline_step_run_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Rule:</strong>
+    <%= alert.rule_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Severity:</strong>
+    <%= alert.severity %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Message:</strong>
+    <%= alert.message %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= alert.status %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Acknowledged by user:</strong>
+    <%= alert.acknowledged_by_user_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Acknowledged at:</strong>
+    <%= alert.acknowledged_at %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Resolved at:</strong>
+    <%= alert.resolved_at %>
+  </div>
+</div>

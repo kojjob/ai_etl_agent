@@ -1,0 +1,26 @@
+<div id="<%= dom_id run_log %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Pipeline run:</strong>
+    <%= run_log.pipeline_run_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Pipeline step run:</strong>
+    <%= run_log.pipeline_step_run_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Timestamp:</strong>
+    <%= run_log.timestamp %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Level:</strong>
+    <%= run_log.level %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Message:</strong>
+    <%= run_log.message %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Source:</strong>
+    <%= run_log.source %>
+  </div>
+</div>

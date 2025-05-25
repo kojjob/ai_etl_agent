@@ -1,0 +1,30 @@
+<div id="<%= dom_id schedule %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Pipeline:</strong>
+    <%= schedule.pipeline_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Cron expression:</strong>
+    <%= schedule.cron_expression %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Timezone:</strong>
+    <%= schedule.timezone %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Is active:</strong>
+    <%= schedule.is_active? ? "Yes" : "No" %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Next run at:</strong>
+    <%= schedule.next_run_at %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Last triggered run:</strong>
+    <%= schedule.last_triggered_run_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Created by user:</strong>
+    <%= schedule.created_by_user_id %>
+  </div>
+</div>
