@@ -16,7 +16,6 @@ RSpec.describe "schedules/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", schedules_path, "post" do
-
       assert_select "input[name=?]", "schedule[pipeline_id]"
 
       assert_select "input[name=?]", "schedule[cron_expression]"

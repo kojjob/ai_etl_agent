@@ -16,7 +16,6 @@ RSpec.describe "ai_interaction_logs/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", ai_interaction_logs_path, "post" do
-
       assert_select "input[name=?]", "ai_interaction_log[user_id]"
 
       assert_select "input[name=?]", "ai_interaction_log[session_id]"

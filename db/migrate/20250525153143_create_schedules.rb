@@ -1,7 +1,7 @@
 class CreateSchedules < ActiveRecord::Migration[8.0]
   def change
     create_table :schedules do |t|
-      t.references :pipeline, index: {unique: true}, null: false, foreign_key: true
+      t.references :pipeline, index: { unique: true }, null: false, foreign_key: true
       t.string :cron_expression
       t.string :timezone
       t.boolean :is_active

@@ -15,7 +15,6 @@ RSpec.describe "run_logs/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", run_logs_path, "post" do
-
       assert_select "input[name=?]", "run_log[pipeline_run_id]"
 
       assert_select "input[name=?]", "run_log[pipeline_step_run_id]"

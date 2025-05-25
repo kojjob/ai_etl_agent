@@ -30,10 +30,10 @@ Rails.application.routes.draw do
 
   # Demo route
   get "demo" => "home#demo"
-  
+
   # Docs route
   get "docs" => "home#docs"
-  
+
   # Defines the root path route ("/")
   root "home#index"
 end

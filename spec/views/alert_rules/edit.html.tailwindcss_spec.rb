@@ -21,7 +21,6 @@ RSpec.describe "alert_rules/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", alert_rule_path(alert_rule), "post" do
-
       assert_select "input[name=?]", "alert_rule[name]"
 
       assert_select "textarea[name=?]", "alert_rule[description]"

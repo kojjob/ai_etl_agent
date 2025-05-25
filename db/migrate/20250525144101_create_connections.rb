@@ -7,7 +7,7 @@ class CreateConnections < ActiveRecord::Migration[8.0]
       t.jsonb :configuration
       t.string :test_status
       t.datetime :last_tested_at
-      t.references :created_by_user, null: false, foreign_key: { to_table: :users }, null: false 
+      t.references :created_by_user, null: false, foreign_key: { to_table: :users }, null: false
 
       t.timestamps
     end

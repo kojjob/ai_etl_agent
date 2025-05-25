@@ -20,7 +20,6 @@ RSpec.describe "ai_suggestions/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", ai_suggestions_path, "post" do
-
       assert_select "input[name=?]", "ai_suggestion[user_id]"
 
       assert_select "input[name=?]", "ai_suggestion[session_id]"

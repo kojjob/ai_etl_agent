@@ -13,7 +13,6 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/pipeline_runs", type: :request do
-  
   # This should return the minimal set of attributes required to create a valid
   # PipelineRun. As you add validations to PipelineRun, be sure to
   # adjust the attributes here as well.

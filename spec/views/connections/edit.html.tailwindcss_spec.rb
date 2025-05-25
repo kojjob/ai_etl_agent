@@ -20,7 +20,6 @@ RSpec.describe "connections/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", connection_path(connection), "post" do
-
       assert_select "input[name=?]", "connection[name]"
 
       assert_select "textarea[name=?]", "connection[description]"

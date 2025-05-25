@@ -5,7 +5,7 @@ class CreatePipelineRuns < ActiveRecord::Migration[8.0]
       t.integer :pipeline_version_at_run
       t.string :status
       t.string :triggered_by_type
-      t.references :triggered_by_user, null: false, foreign_key: { to_table: :users } 
+      t.references :triggered_by_user, null: false, foreign_key: { to_table: :users }
       t.datetime :start_time
       t.datetime :end_time
       t.bigint :duration_ms

@@ -20,7 +20,6 @@ RSpec.describe "schedules/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", schedule_path(schedule), "post" do
-
       assert_select "input[name=?]", "schedule[pipeline_id]"
 
       assert_select "input[name=?]", "schedule[cron_expression]"

@@ -19,7 +19,6 @@ RSpec.describe "dashboard_widgets/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", dashboard_widget_path(dashboard_widget), "post" do
-
       assert_select "input[name=?]", "dashboard_widget[dashboard_id]"
 
       assert_select "input[name=?]", "dashboard_widget[widget_type]"

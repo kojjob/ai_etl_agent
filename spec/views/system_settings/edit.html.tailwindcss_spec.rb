@@ -18,7 +18,6 @@ RSpec.describe "system_settings/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", system_setting_path(system_setting), "post" do
-
       assert_select "input[name=?]", "system_setting[setting_key]"
 
       assert_select "input[name=?]", "system_setting[setting_value]"

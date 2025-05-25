@@ -18,7 +18,6 @@ RSpec.describe "pipeline_runs/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", pipeline_runs_path, "post" do
-
       assert_select "input[name=?]", "pipeline_run[pipeline_id]"
 
       assert_select "input[name=?]", "pipeline_run[pipeline_version_at_run]"

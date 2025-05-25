@@ -22,7 +22,6 @@ RSpec.describe "alerts/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", alert_path(alert), "post" do
-
       assert_select "input[name=?]", "alert[pipeline_id]"
 
       assert_select "input[name=?]", "alert[pipeline_run_id]"

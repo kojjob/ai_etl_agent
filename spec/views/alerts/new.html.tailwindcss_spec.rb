@@ -18,7 +18,6 @@ RSpec.describe "alerts/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", alerts_path, "post" do
-
       assert_select "input[name=?]", "alert[pipeline_id]"
 
       assert_select "input[name=?]", "alert[pipeline_run_id]"

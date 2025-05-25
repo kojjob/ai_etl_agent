@@ -11,15 +11,12 @@ class CreateProjects < ActiveRecord::Migration[8.0]
       t.datetime :due_at
       t.jsonb :tags, default: []
 
-      t.timestamps 
-
- 
+      t.timestamps
     end
     # Only add indexes for columns not already handled by `index: { unique: true }` or `t.references`
     add_index :projects, :status
     add_index :projects, :started_at
     add_index :projects, :due_at
     add_index :projects, :tags, using: :gin # For jsonb querying, GIN index is correct.
-
   end
 end

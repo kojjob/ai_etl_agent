@@ -19,7 +19,6 @@ RSpec.describe "messages/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", message_path(message), "post" do
-
       assert_select "input[name=?]", "message[session_id]"
 
       assert_select "input[name=?]", "message[role]"

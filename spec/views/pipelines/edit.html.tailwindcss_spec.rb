@@ -22,7 +22,6 @@ RSpec.describe "pipelines/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", pipeline_path(pipeline), "post" do
-
       assert_select "input[name=?]", "pipeline[name]"
 
       assert_select "textarea[name=?]", "pipeline[description]"

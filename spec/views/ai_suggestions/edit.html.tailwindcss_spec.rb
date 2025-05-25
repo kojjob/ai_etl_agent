@@ -24,7 +24,6 @@ RSpec.describe "ai_suggestions/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", ai_suggestion_path(ai_suggestion), "post" do
-
       assert_select "input[name=?]", "ai_suggestion[user_id]"
 
       assert_select "input[name=?]", "ai_suggestion[session_id]"

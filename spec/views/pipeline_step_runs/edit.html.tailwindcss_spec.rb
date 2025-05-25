@@ -22,7 +22,6 @@ RSpec.describe "pipeline_step_runs/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", pipeline_step_run_path(pipeline_step_run), "post" do
-
       assert_select "input[name=?]", "pipeline_step_run[pipeline_run_id]"
 
       assert_select "input[name=?]", "pipeline_step_run[pipeline_step_id]"
