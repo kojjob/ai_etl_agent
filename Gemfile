@@ -81,7 +81,6 @@ gem "sidekiq-cron"
 
 # File Processing
 gem "rubyXL" # For Excel processing
-gem "roo" # Alternative Excel/CSV processor
 
 # Authentication & Authorization
 gem "devise"

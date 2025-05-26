@@ -1,0 +1,42 @@
+<div id="<%= dom_id pipeline_run %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Pipeline:</strong>
+    <%= pipeline_run.pipeline_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Pipeline version at run:</strong>
+    <%= pipeline_run.pipeline_version_at_run %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= pipeline_run.status %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Triggered by type:</strong>
+    <%= pipeline_run.triggered_by_type %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Triggered by user:</strong>
+    <%= pipeline_run.triggered_by_user_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Start time:</strong>
+    <%= pipeline_run.start_time %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">End time:</strong>
+    <%= pipeline_run.end_time %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Duration ms:</strong>
+    <%= pipeline_run.duration_ms %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Parameters:</strong>
+    <%= pipeline_run.parameters %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Summary metrics:</strong>
+    <%= pipeline_run.summary_metrics %>
+  </div>
+</div>

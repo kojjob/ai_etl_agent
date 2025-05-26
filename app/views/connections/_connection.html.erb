@@ -1,0 +1,30 @@
+<div id="<%= dom_id connection %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= connection.name %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= connection.description %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Type:</strong>
+    <%= connection.type %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Configuration:</strong>
+    <%= connection.configuration %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Test status:</strong>
+    <%= connection.test_status %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Last tested at:</strong>
+    <%= connection.last_tested_at %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Created by user:</strong>
+    <%= connection.created_by_user_id %>
+  </div>
+</div>

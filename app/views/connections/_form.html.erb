@@ -1,0 +1,52 @@
+<%= form_with(model: connection, class: "contents") do |form| %>
+  <% if connection.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(connection.errors.count, "error") %> prohibited this connection from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% connection.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": connection.errors[:name].none?, "border-red-400 focus:outline-red-600": connection.errors[:name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :description %>
+    <%= form.textarea :description, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": connection.errors[:description].none?, "border-red-400 focus:outline-red-600": connection.errors[:description].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :type %>
+    <%= form.text_field :type, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": connection.errors[:type].none?, "border-red-400 focus:outline-red-600": connection.errors[:type].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :configuration %>
+    <%= form.text_field :configuration, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": connection.errors[:configuration].none?, "border-red-400 focus:outline-red-600": connection.errors[:configuration].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :test_status %>
+    <%= form.text_field :test_status, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": connection.errors[:test_status].none?, "border-red-400 focus:outline-red-600": connection.errors[:test_status].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :last_tested_at %>
+    <%= form.datetime_field :last_tested_at, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": connection.errors[:last_tested_at].none?, "border-red-400 focus:outline-red-600": connection.errors[:last_tested_at].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :created_by_user_id %>
+    <%= form.text_field :created_by_user_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": connection.errors[:created_by_user_id].none?, "border-red-400 focus:outline-red-600": connection.errors[:created_by_user_id].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

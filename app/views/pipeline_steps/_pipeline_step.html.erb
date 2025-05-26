@@ -1,0 +1,46 @@
+<div id="<%= dom_id pipeline_step %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Pipeline:</strong>
+    <%= pipeline_step.pipeline_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= pipeline_step.name %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= pipeline_step.description %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Step type:</strong>
+    <%= pipeline_step.step_type %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Sequence order:</strong>
+    <%= pipeline_step.sequence_order %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Configuration:</strong>
+    <%= pipeline_step.configuration %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Source connection:</strong>
+    <%= pipeline_step.source_connection_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Target connection:</strong>
+    <%= pipeline_step.target_connection_id %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Expected input schema:</strong>
+    <%= pipeline_step.expected_input_schema %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Expected output schema:</strong>
+    <%= pipeline_step.expected_output_schema %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Ui position:</strong>
+    <%= pipeline_step.ui_position %>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div id="<%= dom_id alert_rule %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= alert_rule.name %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= alert_rule.description %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Target entity type:</strong>
+    <%= alert_rule.target_entity_type %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Condition:</strong>
+    <%= alert_rule.condition %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Severity:</strong>
+    <%= alert_rule.severity %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Notification channels:</strong>
+    <%= alert_rule.notification_channels %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Is active:</strong>
+    <%= alert_rule.is_active? ? "Yes" : "No" %>
+  </div>
+</div>

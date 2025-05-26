@@ -1,0 +1,693 @@
+<div class="min-h-screen bg-gray-50">
+  <!-- Header Section -->
+  <div class="bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white">
+    <div class="container mx-auto px-6 py-16">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Documentation
+        </h1>
+        <p class="text-xl text-blue-100 mb-8">
+          Everything you need to know about building, deploying, and managing AI-powered ETL pipelines
+        </p>
+        
+        <!-- Quick Search -->
+        <div class="max-w-md mx-auto">
+          <div class="relative">
+            <input type="text" 
+                   placeholder="Search documentation..." 
+                   data-controller="docs-search"
+                   data-docs-search-target="input"
+                   data-action="input->docs-search#search"
+                   class="w-full px-4 py-3 pl-12 bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent">
+            <svg class="absolute left-4 top-3.5 w-5 h-5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-6 py-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+      
+      <!-- Sidebar Navigation -->
+      <div class="lg:w-1/4">
+        <div class="sticky top-24 bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Table of Contents</h3>
+          <nav class="space-y-2" data-controller="docs-nav">
+            <a href="#getting-started" class="docs-nav-link block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">
+              Getting Started
+            </a>
+            <a href="#pipelines" class="docs-nav-link block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">
+              Creating Pipelines
+            </a>
+            <a href="#connections" class="docs-nav-link block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">
+              Data Connections
+            </a>
+            <a href="#ai-features" class="docs-nav-link block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">
+              AI Features
+            </a>
+            <a href="#monitoring" class="docs-nav-link block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">
+              Monitoring & Alerts
+            </a>
+            <a href="#api-reference" class="docs-nav-link block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">
+              API Reference
+            </a>
+            <a href="#troubleshooting" class="docs-nav-link block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">
+              Troubleshooting
+            </a>
+            <a href="#examples" class="docs-nav-link block py-2 px-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200">
+              Examples
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="lg:w-3/4">
+        <div class="space-y-12">
+          
+          <!-- Getting Started Section -->
+          <section id="getting-started" class="docs-section">
+            <div class="bg-white rounded-lg shadow-md p-8">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                </span>
+                Getting Started
+              </h2>
+              
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Welcome to AI ETL Agent! This guide will help you get up and running with intelligent data pipeline automation in minutes.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-100">
+                  <h3 class="text-lg font-semibold text-blue-900 mb-3">Quick Start</h3>
+                  <ol class="space-y-2 text-sm text-blue-800">
+                    <li class="flex items-start">
+                      <span class="bg-blue-200 text-blue-900 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
+                      <%= link_to "Create your first connection", connections_path, class: "hover:underline" %>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="bg-blue-200 text-blue-900 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
+                      <%= link_to "Build a data pipeline", pipelines_path, class: "hover:underline" %>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="bg-blue-200 text-blue-900 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
+                      Schedule and monitor runs
+                    </li>
+                  </ol>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-100">
+                  <h3 class="text-lg font-semibold text-purple-900 mb-3">Key Concepts</h3>
+                  <ul class="space-y-2 text-sm text-purple-800">
+                    <li class="flex items-center">
+                      <svg class="w-4 h-4 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      Pipelines: Automated data workflows
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-4 h-4 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      Connections: Data source integrations
+                    </li>
+                    <li class="flex items-center">
+                      <svg class="w-4 h-4 mr-2 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      AI Insights: Smart data processing
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                <div class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-600 mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                  </svg>
+                  <div>
+                    <h4 class="text-sm font-semibold text-yellow-800 mb-1">Before You Begin</h4>
+                    <p class="text-sm text-yellow-700">Make sure you have the necessary credentials for your data sources and understand your data governance requirements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Pipelines Section -->
+          <section id="pipelines" class="docs-section">
+            <div class="bg-white rounded-lg shadow-md p-8">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </span>
+                Creating Pipelines
+              </h2>
+              
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Pipelines are the heart of AI ETL Agent. They define how data flows from sources to destinations with intelligent transformations along the way.
+              </p>
+
+              <div class="space-y-6">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-4">Pipeline Components</h3>
+                  <div class="grid gap-4">
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                      <h4 class="font-semibold text-gray-900 mb-2">📥 Extract Steps</h4>
+                      <p class="text-gray-600 text-sm">Pull data from various sources including databases, APIs, files, and streaming platforms.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                      <h4 class="font-semibold text-gray-900 mb-2">🔄 Transform Steps</h4>
+                      <p class="text-gray-600 text-sm">Clean, validate, and reshape data using AI-powered transformations and custom logic.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                      <h4 class="font-semibold text-gray-900 mb-2">📤 Load Steps</h4>
+                      <p class="text-gray-600 text-sm">Deliver processed data to destinations like data warehouses, databases, or analytics platforms.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-4">Creating Your First Pipeline</h3>
+                  <div class="bg-gray-50 rounded-lg p-6">
+                    <pre class="text-sm text-gray-800 overflow-x-auto"><code># Example: Customer Data Pipeline
+1. Connect to your CRM system (Extract)
+2. Apply data quality rules (Transform)
+3. Enrich with AI insights (Transform)
+4. Load to data warehouse (Load)
+5. Send alerts on completion (Notify)</code></pre>
+                  </div>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                  <h4 class="font-semibold text-blue-900 mb-3">💡 Pro Tips</h4>
+                  <ul class="space-y-2 text-sm text-blue-800">
+                    <li>• Start with simple pipelines and add complexity gradually</li>
+                    <li>• Use descriptive names for your pipeline steps</li>
+                    <li>• Test with small data samples first</li>
+                    <li>• Set up monitoring and alerts from the beginning</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Connections Section -->
+          <section id="connections" class="docs-section">
+            <div class="bg-white rounded-lg shadow-md p-8">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                  </svg>
+                </span>
+                Data Connections
+              </h2>
+              
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Connections allow you to securely integrate with various data sources and destinations. AI ETL Agent supports a wide range of systems.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-4">Supported Sources</h3>
+                  <div class="space-y-3">
+                    <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                      <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-blue-600 text-sm font-bold">DB</span>
+                      </div>
+                      <div>
+                        <div class="font-medium text-gray-900">Databases</div>
+                        <div class="text-sm text-gray-600">PostgreSQL, MySQL, SQLite</div>
+                      </div>
+                    </div>
+                    <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                      <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-green-600 text-sm font-bold">API</span>
+                      </div>
+                      <div>
+                        <div class="font-medium text-gray-900">REST APIs</div>
+                        <div class="text-sm text-gray-600">Custom endpoints, webhooks</div>
+                      </div>
+                    </div>
+                    <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                      <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                        <span class="text-orange-600 text-sm font-bold">📁</span>
+                      </div>
+                      <div>
+                        <div class="font-medium text-gray-900">File Systems</div>
+                        <div class="text-sm text-gray-600">CSV, JSON, Parquet</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-4">Connection Setup</h3>
+                  <div class="space-y-4">
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                      <h4 class="font-medium text-gray-900 mb-2">1. Choose Connection Type</h4>
+                      <p class="text-sm text-gray-600">Select from our supported integrations</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                      <h4 class="font-medium text-gray-900 mb-2">2. Configure Credentials</h4>
+                      <p class="text-sm text-gray-600">Securely store authentication details</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                      <h4 class="font-medium text-gray-900 mb-2">3. Test Connection</h4>
+                      <p class="text-sm text-gray-600">Verify connectivity and permissions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-amber-50 border border-amber-200 rounded-lg p-6">
+                <h4 class="font-semibold text-amber-900 mb-3">🔒 Security Best Practices</h4>
+                <ul class="space-y-2 text-sm text-amber-800">
+                  <li>• Use environment variables for sensitive credentials</li>
+                  <li>• Implement least-privilege access controls</li>
+                  <li>• Regularly rotate authentication tokens</li>
+                  <li>• Monitor connection usage and access logs</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- AI Features Section -->
+          <section id="ai-features" class="docs-section">
+            <div class="bg-white rounded-lg shadow-md p-8">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-gradient-to-br from-purple-100 to-pink-100 text-purple-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                  </svg>
+                </span>
+                AI-Powered Features
+              </h2>
+              
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Leverage artificial intelligence to automate complex data operations and gain insights that would be impossible with traditional ETL tools.
+              </p>
+
+              <div class="grid gap-6 mb-8">
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-200">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-blue-500 text-white rounded mr-2 flex items-center justify-center text-sm">🧠</span>
+                    Smart Data Quality
+                  </h3>
+                  <p class="text-gray-600 mb-4">AI automatically detects and suggests fixes for data quality issues including duplicates, inconsistencies, and anomalies.</p>
+                  <div class="bg-white/60 rounded p-3">
+                    <code class="text-sm text-gray-800">
+                      # Example: AI detects email format issues<br>
+                      "john@domain" → "john@domain.com" (auto-suggest)
+                    </code>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg border border-green-200">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-green-500 text-white rounded mr-2 flex items-center justify-center text-sm">📊</span>
+                    Intelligent Schema Mapping
+                  </h3>
+                  <p class="text-gray-600 mb-4">Automatically map fields between different data sources based on content analysis and naming patterns.</p>
+                  <div class="bg-white/60 rounded p-3">
+                    <code class="text-sm text-gray-800">
+                      customer_name → full_name (85% confidence)
+                    </code>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                    <span class="w-6 h-6 bg-purple-500 text-white rounded mr-2 flex items-center justify-center text-sm">🔮</span>
+                    Predictive Insights
+                  </h3>
+                  <p class="text-gray-600 mb-4">Generate predictions and forecasts based on historical data patterns and trends.</p>
+                  <div class="bg-white/60 rounded p-3">
+                    <code class="text-sm text-gray-800">
+                      Predicted customer churn: 15% increase next quarter
+                    </code>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
+                <h4 class="font-semibold text-indigo-900 mb-3">🚀 Getting Started with AI</h4>
+                <ol class="space-y-2 text-sm text-indigo-800">
+                  <li>1. Enable AI features in your pipeline settings</li>
+                  <li>2. Provide sample data for AI training</li>
+                  <li>3. Review and approve AI suggestions</li>
+                  <li>4. Monitor AI performance and accuracy</li>
+                </ol>
+              </div>
+            </div>
+          </section>
+
+          <!-- Monitoring Section -->
+          <section id="monitoring" class="docs-section">
+            <div class="bg-white rounded-lg shadow-md p-8">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-red-100 text-red-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                </span>
+                Monitoring & Alerts
+              </h2>
+              
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Keep your data pipelines running smoothly with comprehensive monitoring, alerting, and observability features.
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-4">Real-time Monitoring</h3>
+                  <ul class="space-y-3">
+                    <li class="flex items-start">
+                      <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      <div>
+                        <div class="font-medium text-gray-900">Pipeline Status</div>
+                        <div class="text-sm text-gray-600">Live updates on execution progress</div>
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      <div>
+                        <div class="font-medium text-gray-900">Performance Metrics</div>
+                        <div class="text-sm text-gray-600">Throughput, latency, and resource usage</div>
+                      </div>
+                    </li>
+                    <li class="flex items-start">
+                      <svg class="w-5 h-5 text-green-500 mr-3 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      <div>
+                        <div class="font-medium text-gray-900">Data Quality Scores</div>
+                        <div class="text-sm text-gray-600">Continuous quality assessment</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-4">Alert Configuration</h3>
+                  <div class="space-y-4">
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                      <h4 class="font-medium text-gray-900 mb-2 flex items-center">
+                        <span class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></span>
+                        Warning Alerts
+                      </h4>
+                      <p class="text-sm text-gray-600">Performance degradation, data delays</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                      <h4 class="font-medium text-gray-900 mb-2 flex items-center">
+                        <span class="w-4 h-4 bg-red-400 rounded-full mr-2"></span>
+                        Critical Alerts
+                      </h4>
+                      <p class="text-sm text-gray-600">Pipeline failures, connection issues</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-sm p-4">
+                      <h4 class="font-medium text-gray-900 mb-2 flex items-center">
+                        <span class="w-4 h-4 bg-green-400 rounded-full mr-2"></span>
+                        Success Notifications
+                      </h4>
+                      <p class="text-sm text-gray-600">Completed runs, milestones reached</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 rounded-lg p-6">
+                <h4 class="font-semibold text-gray-900 mb-4">Sample Alert Configuration</h4>
+                <pre class="text-sm text-gray-800 overflow-x-auto"><code>{
+  "alert_name": "Pipeline Failure",
+  "condition": "status == 'failed'",
+  "channels": ["email", "slack"],
+  "recipients": ["admin@company.com", "#data-alerts"],
+  "escalation": {
+    "delay": "15m",
+    "to": ["manager@company.com"]
+  }
+}</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- API Reference Section -->
+          <section id="api-reference" class="docs-section">
+            <div class="bg-white rounded-lg shadow-md p-8">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                  </svg>
+                </span>
+                API Reference
+              </h2>
+              
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Integrate AI ETL Agent into your applications and automate pipeline management with our RESTful API.
+              </p>
+
+              <div class="space-y-6">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-4">Authentication</h3>
+                  <div class="bg-gray-50 rounded-lg p-6">
+                    <code class="text-sm text-gray-800">
+                      curl -H "Authorization: Bearer YOUR_API_TOKEN" \\<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp; https://api.ai-etl-agent.com/v1/pipelines
+                    </code>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-4">Core Endpoints</h3>
+                  <div class="space-y-4">
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                      <div class="bg-green-50 px-4 py-2">
+                        <span class="text-xs font-semibold text-green-800 bg-green-200 px-2 py-1 rounded">GET</span>
+                        <span class="ml-3 font-mono text-sm">/api/v1/pipelines</span>
+                      </div>
+                      <div class="p-4">
+                        <p class="text-sm text-gray-600 mb-2">List all pipelines</p>
+                        <div class="text-xs text-gray-500">Returns paginated list of pipeline objects</div>
+                      </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                      <div class="bg-blue-50 px-4 py-2">
+                        <span class="text-xs font-semibold text-blue-800 bg-blue-200 px-2 py-1 rounded">POST</span>
+                        <span class="ml-3 font-mono text-sm">/api/v1/pipelines</span>
+                      </div>
+                      <div class="p-4">
+                        <p class="text-sm text-gray-600 mb-2">Create a new pipeline</p>
+                        <div class="text-xs text-gray-500">Requires name, description, and steps configuration</div>
+                      </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                      <div class="bg-orange-50 px-4 py-2">
+                        <span class="text-xs font-semibold text-orange-800 bg-orange-200 px-2 py-1 rounded">PUT</span>
+                        <span class="ml-3 font-mono text-sm">/api/v1/pipelines/:id/run</span>
+                      </div>
+                      <div class="p-4">
+                        <p class="text-sm text-gray-600 mb-2">Execute a pipeline</p>
+                        <div class="text-xs text-gray-500">Triggers immediate execution with optional parameters</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-4">Response Example</h3>
+                  <div class="bg-gray-50 rounded-lg p-6 overflow-x-auto">
+                    <pre class="text-sm text-gray-800"><code>{
+  "id": "pipe_123",
+  "name": "Customer Data Sync",
+  "status": "running",
+  "created_at": "2025-01-01T00:00:00Z",
+  "steps": [
+    {
+      "id": "step_1",
+      "type": "extract",
+      "source": "salesforce",
+      "status": "completed"
+    },
+    {
+      "id": "step_2", 
+      "type": "transform",
+      "operation": "clean_data",
+      "status": "running"
+    }
+  ]
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Troubleshooting Section -->
+          <section id="troubleshooting" class="docs-section">
+            <div class="bg-white rounded-lg shadow-md p-8">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 109.75 9.75A9.75 9.75 0 0012 2.25z"/>
+                  </svg>
+                </span>
+                Troubleshooting
+              </h2>
+              
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Common issues and their solutions to help you resolve problems quickly and keep your pipelines running smoothly.
+              </p>
+
+              <div class="space-y-6">
+                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                  <h3 class="text-lg font-semibold text-red-900 mb-4">Pipeline Failures</h3>
+                  <div class="space-y-4">
+                    <div class="bg-white rounded p-4">
+                      <h4 class="font-medium text-gray-900 mb-2">❌ Connection Timeout</h4>
+                      <p class="text-sm text-gray-600 mb-2"><strong>Cause:</strong> Network issues or database overload</p>
+                      <p class="text-sm text-gray-600"><strong>Solution:</strong> Check network connectivity, increase timeout values, or retry during off-peak hours</p>
+                    </div>
+                    <div class="bg-white rounded p-4">
+                      <h4 class="font-medium text-gray-900 mb-2">❌ Schema Mismatch</h4>
+                      <p class="text-sm text-gray-600 mb-2"><strong>Cause:</strong> Source schema changed without pipeline update</p>
+                      <p class="text-sm text-gray-600"><strong>Solution:</strong> Update pipeline schema mapping or enable automatic schema detection</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                  <h3 class="text-lg font-semibold text-yellow-900 mb-4">Performance Issues</h3>
+                  <div class="space-y-4">
+                    <div class="bg-white rounded p-4">
+                      <h4 class="font-medium text-gray-900 mb-2">⚠️ Slow Processing</h4>
+                      <p class="text-sm text-gray-600 mb-2"><strong>Cause:</strong> Large data volumes or inefficient transformations</p>
+                      <p class="text-sm text-gray-600"><strong>Solution:</strong> Implement batch processing, optimize queries, or increase compute resources</p>
+                    </div>
+                    <div class="bg-white rounded p-4">
+                      <h4 class="font-medium text-gray-900 mb-2">⚠️ Memory Exhaustion</h4>
+                      <p class="text-sm text-gray-600 mb-2"><strong>Cause:</strong> Processing data sets larger than available memory</p>
+                      <p class="text-sm text-gray-600"><strong>Solution:</strong> Enable streaming mode or process data in smaller chunks</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                  <h3 class="text-lg font-semibold text-blue-900 mb-4">🔧 Debugging Tools</h3>
+                  <ul class="space-y-2 text-sm text-blue-800">
+                    <li>• View detailed logs in the pipeline run history</li>
+                    <li>• Use the data preview feature to inspect intermediate results</li>
+                    <li>• Enable debug mode for verbose output</li>
+                    <li>• Check the system status page for known issues</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Examples Section -->
+          <section id="examples" class="docs-section">
+            <div class="bg-white rounded-lg shadow-md p-8">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="w-8 h-8 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mr-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                  </svg>
+                </span>
+                Examples & Use Cases
+              </h2>
+              
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Real-world examples and templates to help you get started quickly with common data pipeline patterns.
+              </p>
+
+              <div class="grid gap-6">
+                <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-lg border border-blue-200">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">📊 Customer Analytics Pipeline</h3>
+                  <p class="text-gray-600 mb-4">Sync customer data from CRM to data warehouse with enrichment and cleansing.</p>
+                  <div class="bg-white/80 rounded p-4 mb-4">
+                    <code class="text-sm text-gray-800">
+                      Salesforce → Data Quality → AI Enrichment → Snowflake
+                    </code>
+                  </div>
+                  <div class="flex space-x-3">
+                    <%= link_to "View Template", "#", class: "text-blue-600 hover:text-blue-800 text-sm font-medium" %>
+                    <%= link_to "Create Pipeline", pipelines_path, class: "text-blue-600 hover:text-blue-800 text-sm font-medium" %>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">🏪 E-commerce Data Integration</h3>
+                  <p class="text-gray-600 mb-4">Combine order, inventory, and customer data for unified reporting.</p>
+                  <div class="bg-white/80 rounded p-4 mb-4">
+                    <code class="text-sm text-gray-800">
+                      Shopify + Inventory DB → Transform → Analytics Dashboard
+                    </code>
+                  </div>
+                  <div class="flex space-x-3">
+                    <%= link_to "View Template", "#", class: "text-green-600 hover:text-green-800 text-sm font-medium" %>
+                    <%= link_to "Create Pipeline", pipelines_path, class: "text-green-600 hover:text-green-800 text-sm font-medium" %>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-3">📈 Financial Reporting Pipeline</h3>
+                  <p class="text-gray-600 mb-4">Automate financial data collection and regulatory reporting.</p>
+                  <div class="bg-white/80 rounded p-4 mb-4">
+                    <code class="text-sm text-gray-800">
+                      Banking APIs → Compliance Checks → Report Generation
+                    </code>
+                  </div>
+                  <div class="flex space-x-3">
+                    <%= link_to "View Template", "#", class: "text-purple-600 hover:text-purple-800 text-sm font-medium" %>
+                    <%= link_to "Create Pipeline", pipelines_path, class: "text-purple-600 hover:text-purple-800 text-sm font-medium" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help Section -->
+  <div class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Need More Help?</h2>
+      <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+        Can't find what you're looking for? Our support team is here to help you succeed with AI ETL Agent.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:support@ai-etl-agent.com" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200">
+          Contact Support
+        </a>
+        <a href="#" class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors duration-200">
+          Join Community
+        </a>
+        <a href="#" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors duration-200">
+          Schedule Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
