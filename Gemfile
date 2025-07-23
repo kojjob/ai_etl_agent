@@ -76,7 +76,7 @@ group :test do
 end
 
 # Background Processing
-gem "sidekiq", "~> 7.0"
+gem "sidekiq", "~> 8.0"
 gem "sidekiq-cron"
 
 # File Processing
